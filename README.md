@@ -197,6 +197,9 @@ Alternatively, can build from command line:
 - Windows has a path length limitation of 260 bytes
 - Can try removing the path limitation in the registry:
 [Remove path limitation][https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=registry]
+
+3.  Build fails with a missing `qhwi_shaders.h`
+- `data/precompiled/` is not committed to the repository — CMake will detect the missing header and compile the shaders automatically on first build. This can also be triggered explicitly with '-DQHWI_BUILD_SHADERS=ON'
 ### Notes
 - CMake build script packages all the shaders as part of Android APK (in assets folder)
 - CMake build script also downloads / packages the Vulkan prebuilt validation layer
